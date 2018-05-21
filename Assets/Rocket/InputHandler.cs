@@ -26,32 +26,17 @@ public class InputHandler : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        //ProcessKeyboard();
-        if (Input.anyKey)
-        {
-            foreach (KeyCode inputs in keys)
-            {
-                /*if (Input.GetKeyDown(KeyCode.W) == inputs)
-                {
-                    print("Kewl");
-                }*/
-            }
-        }
+        ProcessKeyboard();
     }
 
-    public void CheckRotationKeys()
-    {
-        //key_move = { KeyCode.W : (1,0,0), }
-    }
-    /*
     void ProcessKeyboard()
     {
-        if (Input.GetKey(KeyCode.W)) { wIsPressed = true; }
-        if (Input.GetKey(KeyCode.A)) { aIsPressed = true; }
-        if (Input.GetKey(KeyCode.S)) { sIsPressed = true; }
-        if (Input.GetKey(KeyCode.D)) { dIsPressed = true; }
-        if (Input.GetKey(KeyCode.LeftControl)) { leftCtrlIsPressed = true; }
-        if (Input.GetKey(KeyCode.Space)) { spaceIsPressed = true; }
+        if (wIsPressed == false) { if (Input.GetKey(KeyCode.W)) { wIsPressed = true; } }
+        if (aIsPressed == false) { if (Input.GetKey(KeyCode.A)) { aIsPressed = true; } }
+        if (sIsPressed == false) { if (Input.GetKey(KeyCode.S)) { sIsPressed = true; } }
+        if (dIsPressed == false) { if (Input.GetKey(KeyCode.D)) { dIsPressed = true; } }
+        if (leftCtrlIsPressed == false) { if (Input.GetKey(KeyCode.LeftControl)) { leftCtrlIsPressed = true; } }
+        if (spaceIsPressed == false) { if (Input.GetKey(KeyCode.Space)) { spaceIsPressed = true; } }
 
         if (Input.GetKeyUp(KeyCode.W)) { wIsPressed = false; }
         if (Input.GetKeyUp(KeyCode.A)) { aIsPressed = false; }
@@ -88,5 +73,5 @@ public class InputHandler : MonoBehaviour {
             return KeyCode.Space;
         }
         return KeyCode.ScrollLock; // Using ScrollLock as a null value;
-    }*/
+    }
 }

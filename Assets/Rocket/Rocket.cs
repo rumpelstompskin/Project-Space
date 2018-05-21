@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
-    public float currentSpeed = 0f;
-    public float maxSpeed = 2000f;
-
-    public Vector3 currentPosition;
+    ParticleSystem _particleSystem;
 
     public List<GameObject> flameParticles = new List<GameObject>(); // Here we create a list to store our ParticleSystem Gameobjects. We will use these stored GameObjects to toggle the "Thruster" sequence.
 
@@ -15,7 +12,10 @@ public class Rocket : MonoBehaviour {
     void Start () {
         foreach(GameObject flame in flameParticles)
         {
-            print(flame);
+            //print(flame);
+            _particleSystem = flame.GetComponent<ParticleSystem>();
+            var main = _particleSystem.main;
+            main.startSpeed = 0;
         }
     }
 
