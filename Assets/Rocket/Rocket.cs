@@ -15,7 +15,7 @@ public class Rocket : MonoBehaviour {
             //print(flame);
             _particleSystem = flame.GetComponent<ParticleSystem>();
             var main = _particleSystem.main;
-            main.startSpeed = 0;
+            main.startSpeed = 1;
         }
     }
 

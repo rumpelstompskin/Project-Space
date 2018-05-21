@@ -8,6 +8,8 @@ public class InputHandler : MonoBehaviour {
     public bool aIsPressed = false;
     public bool sIsPressed = false;
     public bool dIsPressed = false;
+    public bool qIsPressed = false;
+    public bool eIsPressed = false;
     public bool leftCtrlIsPressed = false;
     public bool spaceIsPressed = false;
 
@@ -35,6 +37,8 @@ public class InputHandler : MonoBehaviour {
         if (aIsPressed == false) { if (Input.GetKey(KeyCode.A)) { aIsPressed = true; } }
         if (sIsPressed == false) { if (Input.GetKey(KeyCode.S)) { sIsPressed = true; } }
         if (dIsPressed == false) { if (Input.GetKey(KeyCode.D)) { dIsPressed = true; } }
+        if (qIsPressed == false) { if (Input.GetKey(KeyCode.Q)) { qIsPressed = true; } }
+        if (eIsPressed == false) { if (Input.GetKey(KeyCode.E)) { eIsPressed = true; } }
         if (leftCtrlIsPressed == false) { if (Input.GetKey(KeyCode.LeftControl)) { leftCtrlIsPressed = true; } }
         if (spaceIsPressed == false) { if (Input.GetKey(KeyCode.Space)) { spaceIsPressed = true; } }
 
@@ -42,6 +46,8 @@ public class InputHandler : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.A)) { aIsPressed = false; }
         if (Input.GetKeyUp(KeyCode.S)) { sIsPressed = false; }
         if (Input.GetKeyUp(KeyCode.D)) { dIsPressed = false; }
+        if (Input.GetKeyUp(KeyCode.Q)) { qIsPressed = false; }
+        if (Input.GetKeyUp(KeyCode.E)) { eIsPressed = false; }
         if (Input.GetKeyUp(KeyCode.LeftControl)) { leftCtrlIsPressed = false; }
         if (Input.GetKeyUp(KeyCode.Space)) { spaceIsPressed = false; }
     }
@@ -71,6 +77,14 @@ public class InputHandler : MonoBehaviour {
         if (spaceIsPressed)
         {
             return KeyCode.Space;
+        }
+        if (qIsPressed)
+        {
+            return KeyCode.Q;
+        }
+        if (eIsPressed)
+        {
+            return KeyCode.E;
         }
         return KeyCode.ScrollLock; // Using ScrollLock as a null value;
     }
